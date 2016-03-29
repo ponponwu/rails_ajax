@@ -1,0 +1,6 @@
+$('#user_description').val('<%= @foo %>');
+
+<% @bar.each do |key, value| %>
+	$('body').append( "<p>" + "<%= key %><br>" + "</p>");
+	$('body').append("<%= link_to(value, '/') %><br>");
+<% end %>

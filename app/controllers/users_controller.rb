@@ -18,7 +18,19 @@ class UsersController < ApplicationController
 	end
 
 	def select
-		
+		logger.info "====================="
+		logger.info params[:job]
+		logger.info "====================="
+
+
+		# render :json => {contoller: params[:controller], action: params[:action]}.to_json
+		respond_to do |format|
+			format.js {
+				@foo = "controller: #{params[:controller]}, action: #{params[:action]}"
+				@bar = params;
+			}
+			format.html
+		end
 	end
 	private 
 
