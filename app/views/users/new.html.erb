@@ -1,0 +1,26 @@
+
+<h2>新增使用者</h2>
+<%= simple_form_for @user do |f| %>
+	<div class="group">
+	  <%= f.input :name %>
+	</div>
+	<div class="group">
+	  <%= f.input :job_category, :label => "職務類別" do %>
+	    <%= f.select :job, Job.categories %>
+	  <% end %>
+	</div>
+	<div class="group">
+	  <%= f.input :description %>
+	</div>
+
+	<%= f.submit "Submit", :class =>"btn btn-default", data: {disable_with: "Submitting.."} %>
+
+<% end %>
+
+<script>
+	$('#job').change(function(){
+		$(this).text();
+		alert(123);
+	});
+
+</script>

@@ -1,0 +1,16 @@
+defaults: &defaults
+   job_categories:
+      other : 0
+      web_developer: 1
+      designer: 2
+      app_developer: 3
+      marketing_sales: 4
+      web_social_manager: 5
+development:
+  <<: *defaults
+
+test:
+  <<: *defaults
+
+production:
+  <<: *defaults
